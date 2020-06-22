@@ -65,6 +65,8 @@ const quotes = [
       }
     `</p>
     `;
+      // will change the websites background color every time the button is clicked or setInterval()
+     randomRGB();
 
     return (document.getElementById("quote-box").innerHTML = htmlString);
   }
@@ -93,7 +95,6 @@ const quotes = [
    // print new quote and change the color of the page every 10 sec  
     setInterval(() => {
         printQuote();
-        randomRGB();
     }, 10000)
 
 /***
