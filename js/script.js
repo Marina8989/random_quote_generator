@@ -19,7 +19,7 @@ const quotes = [
       quote: 'three',
       source: 'three',
       citation: 'actor',
-      year: '2018'
+      
     },
     {
       quote: 'four',
@@ -30,26 +30,38 @@ const quotes = [
     {
       quote: 'five',
       source: 'five',
-      citation: 'mom',
-      year: '2016'
+      
     }
 ];
-console.log(quotes);
+
 
 /***
  * `getRandomQuote` function
 ***/
   function getRandomQuote() {
-    const randomNumber = Math.floor(Math.random() * quotes.length);
-    console.log(randomNumber);
+    let randomNumber = Math.floor(Math.random() * quotes.length);
      return quotes[randomNumber];
   }
-console.log(getRandomQuote());
+
 
 /***
  * `printQuote` function
 ***/
+  function printQuote() {
+    let printQ = getRandomQuote();
+    let htmlString = 
+    `<p class='quote'>${printQ.quote}</p>
+     <p class='source'>${printQ.source}
+    
+      if(typeof ${printQ.citation} != 'undefined') {
+        <span class='citation'>${printQ.citation}</span>
+      }
+    
 
+    </p >`;
+    return document.getElementById('quote-box').innerHTML = htmlString; 
+   
+  }
 
 
 /***
