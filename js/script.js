@@ -34,13 +34,17 @@ const quotes = [
       year: '2016'
     }
 ];
-
+console.log(quotes);
 
 /***
  * `getRandomQuote` function
 ***/
-
-
+  function getRandomQuote() {
+    const randomNumber = Math.floor(Math.random() * quotes.length);
+    console.log(randomNumber);
+     return quotes[randomNumber];
+  }
+console.log(getRandomQuote());
 
 /***
  * `printQuote` function
