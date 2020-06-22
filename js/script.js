@@ -67,17 +67,28 @@ const quotes = [
     return (document.getElementById("quote-box").innerHTML = htmlString);
   }
 
-    function randomColor() {
-      let color = Math.floor(Math.random() * 256);
-        let red = 
+     let red;
+     let blue;
+     let green;
 
+    function randomRGB() {
+    
+     red = randomColorGenerator();
+     blue = randomColorGenerator();
+     green = randomColorGenerator();
+
+      document.body.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`;
     }
-   
+       
+    function randomColorGenerator() {
+       return Math.floor(Math.random() * 256);
+    }
 
-
+      
     setInterval(() => {
         printQuote();
-    }, 10000)
+        randomRGB();
+    }, 3000)
 
 /***
  * click event listener for the print quote button
