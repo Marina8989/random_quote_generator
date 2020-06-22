@@ -37,6 +37,7 @@ const quotes = [
 /***
  * `getRandomQuote` function
 ***/
+//choose a random quote from the array of objects
   function getRandomQuote(array) {
     let randomNumber = Math.floor(Math.random() * array.length);
      return array[randomNumber];
@@ -45,9 +46,10 @@ const quotes = [
 /***
  * `printQuote` function
 ***/
+//print the quote to the page with all the properies that the object has
   function printQuote() {
     let printRandomQuote = getRandomQuote(quotes);
-    
+  // variable that stores a html string  
     let htmlString = 
     `
     <p class='quote'>${printRandomQuote.quote}</p>
@@ -67,28 +69,32 @@ const quotes = [
     return (document.getElementById("quote-box").innerHTML = htmlString);
   }
 
+
+  //declare the variables for the random color generator
      let red;
      let blue;
      let green;
 
+   //assign the random numbers generated to the variables and add then to the body in rbg format 
     function randomRGB() {
-    
-     red = randomColorGenerator();
-     blue = randomColorGenerator();
-     green = randomColorGenerator();
+     red = randomNumberGenerator();
+     blue = randomNumberGenerator();
+     green = randomNumberGenerator();
 
       document.body.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`;
     }
        
-    function randomColorGenerator() {
+
+   // a function that generates a random number from 0 - 255 
+    function randomNumberGenerator() {
        return Math.floor(Math.random() * 256);
     }
 
-      
+   // print new quote and change the color of the page every 10 sec  
     setInterval(() => {
         printQuote();
         randomRGB();
-    }, 3000)
+    }, 10000)
 
 /***
  * click event listener for the print quote button
