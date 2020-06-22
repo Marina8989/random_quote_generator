@@ -3,11 +3,26 @@
  * `quotes` array 
 ***/
 const quotes = [
-    {},
-    {},
-    {},
-    {},
-    {}
+    {
+      quote: 'one',
+      source: 'one'
+    },
+    {
+      quote: 'two',
+      source: 'two'
+    },
+    {
+      quote: 'three',
+      source: 'three'
+    },
+    {
+      quote: 'four',
+      source: 'four'
+    },
+    {
+      quote: 'five',
+      source: 'five'
+    }
 ];
 
 
